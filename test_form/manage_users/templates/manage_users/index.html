@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>UI TEST</title>
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}" media="screen" >
+ 	<link rel="stylesheet" href="{% static 'css/bootstrap-table.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!--[if lt IE 9]>
+	    <script src="{% static 'js/html5shiv.js' %}"></script>
+	    <script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+                <a class="navbar-brand" href="index.html">UI TEST</a>
+			</div>
+		</div>
+	</div>
+
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<ul>
+					<li><p>Table functionalities:</p></li>
+					<li>Display the email, city & state of residence and admin notes. - Done</li>
+					<li>Add & Delete a user</li>
+					<li>Change the number of entries shown in the table - Done</li>
+					<li>Pagination - Done</li>
+					<li>Sorting - Done (email)</li>
+					<li> Search - Done</li>
+				</ul>
+
+			</div>
+		</div>
+	</header>
+
+	<div class="container text-center main_content">
+		<table id="table" data-toggle="table" class="table table-striped table-bordered"
+				data-pagination="true" data-search="true" data-side-pagination="server" data-page-list="[ 5, 10, 20, 50, 100]"
+		 		data-url="{% url 'get_users' %}" data-height="300" cellspacing="0" width="100%">
+        <thead>
+			<tr>
+				<th  data-field="email" data-sortable="true" >Email</th>
+				<th  data-field="state">State</th>
+				<th  data-field="city">City</th>
+				<th  data-field="notes">Notes</th>
+			</tr>
+        </thead>
+		</table>
+	</div>
+
+	<footer id="footer" class="top-space">
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2018, Angelika Shvets.
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/headroom.min.js' %}"></script>
+	<script src="{% static 'js/jQuery.headroom.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap-table.js' %}"></script>
+
+    <script src="{% static 'js/template.js' %}"></script>
+</body>
+</html>
