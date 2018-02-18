@@ -21,8 +21,8 @@ def get_users(request):
 def _get_filter_details_from_request(request):
     filter_details = OrderedDict()
 
-    for key, value in request.GET.iteritems():
-        filter_details[key] = value
+    for key in request.GET.keys():
+        filter_details[key] = request.GET[key]
 
     return filter_details
 
